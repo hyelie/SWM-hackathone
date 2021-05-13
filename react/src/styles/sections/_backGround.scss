@@ -1,0 +1,70 @@
+#backgroundContainer {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+}
+#backgroundKing {
+  position: absolute;
+  top: 10%; 
+  left: 0;
+  width: 8%;
+  z-index: 2;
+  -webkit-transform: translate(-50%,-50%); 
+  -ms-transform: translate(-50%,-50%); 
+  transform: translate(-50%,-50%);
+  @include respond(phone) {
+    width: 40%; 
+    height: auto; 
+    z-index: 2;
+  }
+}
+
+#center { 
+  position: absolute; 
+  top: 0; left: 0; 
+  right: 0; 
+  bottom: 0; 
+  -webkit-transform: translate(50%,50%); 
+  -ms-transform: translate(50%,50%); 
+  transform: translate(50%,50%);
+ }
+
+#backgroundBuilding {
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    max-width: 150%; 
+    height: auto; 
+    z-index: 1;
+    -webkit-transform: translate(-50%,-50%); 
+    -ms-transform: translate(-50%,-50%); 
+    transform: translate(-50%,-50%);
+}
+
+#modeSelector {
+  position: absolute;
+  top: 10%; 
+  left: 30%;
+  width: 40%;
+  @include respond(phone) {
+    top: 10%; 
+    left: 10%;
+    width: 80%;
+  }
+}
+
+.gameStart {
+  position: absolute;
+  top: 90%; 
+  left: 45%;
+  width: 10%;
+  height: 6vh;
+  border-radius: 10px;
+  @include respond(phone) {
+    top: 90%; 
+    left: 25%;
+    width: 50%;
+    height: 6vh;
+  }
+}

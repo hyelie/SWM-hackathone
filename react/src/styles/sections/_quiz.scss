@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'BMJUA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  }
+
+#quizForm {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  @include respond(phone) {
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+}
+
+.quizText {
+  font-family: "BMJUA";
+}
+
+.heart{
+  width: 50px;
+}
+.heartfont{
+  font-size: 30px;
+}
+
+.lifeAndScore{
+  background-color: antiquewhite;
+  align-content: space-between;
+  //content: ;
+}
+.score{
+  float: right;
+  font-size: 30px;
+}
+
+#quizHeader {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#quizspace {
+  height: 1vh;
+}
