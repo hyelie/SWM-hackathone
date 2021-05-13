@@ -46,7 +46,7 @@ return (
 <TextField onChange={handleOnChange} name="name" id="outlined-basic" label="닉네임" variant="outlined" value={userInfo.name}  />
 <TextField onChange={handleOnChange} name="email" id="outlined-basic" label="이메일" variant="outlined" value={userInfo.email} />
 <Button type="submit" variant="contained" color="primary" >
-Primary
+제출
 </Button>
 </form>
 
