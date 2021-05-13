@@ -4,7 +4,7 @@ class Score extends Component {
     render() {
         return (
             
-            <span>점수: {this.props.point}점</span>
+            <div className='score'>점수: {this.props.point}점</div>
             
         );
     }

@@ -7,7 +7,7 @@ class Life extends Component {
         return (
             <>
                 <img className='heart' src={heart}/>
-                <span className='heart'>X {this.props.lifeCount}</span>
+                <span className='heartfont'>X {this.props.lifeCount}</span>
             </>
         );
     }

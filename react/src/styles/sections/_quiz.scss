@@ -6,10 +6,14 @@
   }
 
 #quizForm {
-  position: absolute;
-  width: 90%;
-  top: 20%;
-  left: 5%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  @include respond(phone) {
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
 }
 
 .quizText {
@@ -19,7 +23,26 @@
 .heart{
   width: 50px;
 }
+.heartfont{
+  font-size: 30px;
+}
 
 .lifeAndScore{
+  background-color: antiquewhite;
   align-content: space-between;
+  //content: ;
+}
+.score{
+  float: right;
+  font-size: 30px;
+}
+
+#quizHeader {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#quizspace {
+  height: 1vh;
 }

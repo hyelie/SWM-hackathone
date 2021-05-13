@@ -4,7 +4,7 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
-// import MenuBookIcon from '@material-ui/icons/MenuBook';
+import MenuBookIcon from '@material-ui/icons/MenuBook';
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -34,7 +34,7 @@ export default function BottomNav() {
     >
       <BottomNavigationAction component={Link} to="/" label="Game" icon={<SportsEsportsIcon />} />
       <BottomNavigationAction label="ranking" component={Link} to="/ranking" icon={<TrendingUpIcon />} />
-      <BottomNavigationAction label="게임설명" component={Link} to="/sub" icon={<TrendingUpIcon />} />
+      <BottomNavigationAction label="게임설명" component={Link} to="/sub" icon={<MenuBookIcon />} />
     </BottomNavigation>
   );
 }

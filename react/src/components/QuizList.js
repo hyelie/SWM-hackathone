@@ -15,7 +15,6 @@ import choiceFourImage from "../images/choiceFour.png"
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    maxWidth: '36ch',
     backgroundColor: theme.palette.background.paper,
   },
   inline: {
@@ -47,7 +46,7 @@ export default function QuizList({selectNum, choices, answer, selectedAnswer, is
           <> 
           { idx == answer ?
             <>
-            <ListItem style={{background:"#00cdac"}} button alignItems="flex-start" onClick={() => selectedAnswer(idx)}>
+            <ListItem disabled style={{background:"#00cdac"}} button alignItems="flex-start" onClick={() => selectedAnswer(idx)}>
               <ListItemAvatar>
                 <Avatar alt={`${idx+1}one finger`} src={images[idx]} />
               </ListItemAvatar>

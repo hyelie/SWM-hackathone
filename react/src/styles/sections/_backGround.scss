@@ -45,20 +45,26 @@
 #modeSelector {
   position: absolute;
   top: 10%; 
-  left: 10%;
-  width: 80%;
-  // @include respond(phone) {
-  //   width: 40%; 
-  //   height: auto; 
-  //   z-index: 2;
-  // }
+  left: 30%;
+  width: 40%;
+  @include respond(phone) {
+    top: 10%; 
+    left: 10%;
+    width: 80%;
+  }
 }
 
 .gameStart {
   position: absolute;
   top: 90%; 
-  left: 25%;
-  width: 50%;
+  left: 45%;
+  width: 10%;
   height: 6vh;
   border-radius: 10px;
+  @include respond(phone) {
+    top: 90%; 
+    left: 25%;
+    width: 50%;
+    height: 6vh;
+  }
 }

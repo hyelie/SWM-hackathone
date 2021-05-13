@@ -7,62 +7,87 @@ import { getQuizList } from "../actions";
 import Life from "./Life";
 import UserInputForm from "./UserInputForm";
 import Score from "./Score";
+import Timer from './Timer';
+import Container from '@material-ui/core/Container';
 
-
-export default function QuizForm({lifeCount,onDeclineLife, mode, onChangeGame}) {
+export default function QuizForm({lifeCount,onDeclineLife, mode, onChangeGame, isEnding}) {
   const [quizList,setQuizList] = useState(null);
   const [isAnswer, setIsAnswer] = useState(null);
   const [num, setNum] = useState(0);
   const [point, setPoint] = useState(0);
-  const [isEnding, setIsEnding] = useState(false);
   const [selectNum, setSelectNum] = useState(null);
+  const [progress, setProgress] = useState(100);
+  const [isTimeOut, setIsTimeOut] = useState(null);
   useEffect(() => {
-    getQuizList(100).then((response) => {
+    if (!quizList) {
+    getQuizList(99).then((response) => {
       setQuizList(response);
     })
-  }, [])
+  } else { 
+    if (isTimeOut == true) {
+      wrongAnswer()
+      answerProcess()
+      setIsTimeOut(null)
+    }
+  }
+  }, [isTimeOut])
   
-  
-  
+  function wrongAnswer() {
+    setIsAnswer(false)
+    onDeclineLife()
+  }
+  function answerProcess() {
+    setTimeout(()=> {  
+      setNum(num+1);
+      setIsAnswer(null);
+      setSelectNum(null);
+      setProgress(100)
+      console.log(isEnding)
+      console.log(isAnswer)
+    }, 2000)
+  }
+
+  function handleProgress() {
+    wrongAnswer()
+    answerProcess()
+  }
+
   function selectedAnswer(val) {
     if (val == quizList[num].ANS) {
       setIsAnswer(true)
       setPoint(point + 10);
     } else {
-      setIsAnswer(false)
-      onDeclineLife(lifeCount-1)
-  }
-  setSelectNum(val)
-  setTimeout(()=> {  
-    if (lifeCount-1 == 0) {
-      setIsEnding(true);
-    }  
-    setNum(num+1)
-    setIsAnswer(null);
-    setSelectNum(null);
-  }, 2000)
+      wrongAnswer()
+    }
+    setSelectNum(val)
+    answerProcess()
   }
   
   return (
-    <>
+    <Container >
       <div className='lifeAndScore'>
-      <Life lifeCount={lifeCount} />
-      <Score point={point}/>
+        <Life lifeCount={lifeCount}/>
+        <Score point={point}/>
       </div>
+      
       {quizList &&
+        <>
+        {lifeCount  && !selectNum&& <Timer selectNum={selectNum} isAnswer={isAnswer} setIsTimeOut={setIsTimeOut} selectNum={selectNum} isAnswer={isAnswer} progress={progress} setProgress={setProgress} selectedAnswer={selectedAnswer}/>}
+        {!lifeCount && <div id="quizspace"></div>}
         <Paper id="quizForm" elevation={3}>
-          {isEnding ?
+          {isEnding && (isAnswer === null) ?
           <UserInputForm score={point} onChangeGame={onChangeGame} />
           :
-            <>
-          <div>
-            <Typography variant="h6">{quizList[num].PB}{quizList[num].ANS}</Typography>
+          <>
+          <div id="quizHeader">
+            <Typography variant="h6">문제{num+1}. {quizList[num].PB}</Typography>
             </div>
             <QuizList selectNum={selectNum} isAnswer={isAnswer} answer={quizList[num].ANS} selectedAnswer={selectedAnswer} choices={quizList[num].CHOICES}  />
           </>        
           }
           </Paper>
+          </>
       }
-    </>
+    </Container>
   );
 }
