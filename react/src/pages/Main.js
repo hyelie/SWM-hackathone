@@ -26,7 +26,7 @@ function Main() {
         <GameStart isGame={isGame} mode={mode} onChangeGame={setIsGame} />
       </div>
       }
-      {isGame && <QuizForm lifeCount={lifeCount} mode={mode} onDeclineLife={setLifeCount}/>}
+      {isGame && <QuizForm lifeCount={lifeCount} mode={mode} onDeclineLife={setLifeCount} onChangeGame={setIsGame} />}
     </div>
     
   );

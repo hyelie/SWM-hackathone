@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function QuizList({choices, answer, selectedAnswer, isAnswer}) {
+export default function QuizList({selectNum, choices, answer, selectedAnswer, isAnswer}) {
   const classes = useStyles();
   const images = [choiceOneImage, choiceTwoImage,choiceThreeImage, choiceFourImage]
   return (
@@ -48,6 +48,18 @@ export default function QuizList({choices, answer, selectedAnswer, isAnswer}) {
           { idx == answer ?
             <>
             <ListItem style={{background:"#00cdac"}} button alignItems="flex-start" onClick={() => selectedAnswer(idx)}>
+              <ListItemAvatar>
+                <Avatar alt={`${idx+1}one finger`} src={images[idx]} />
+              </ListItemAvatar>
+              <ListItemText
+                primary={choice}
+                className="quizText"
+              />
+            </ListItem>
+            <Divider variant="inset" component="li" />
+            </> : selectNum == idx ?
+            <>
+            <ListItem disabled style={{background:"#f67"}}   button alignItems="flex-start" onClick={() => selectedAnswer(idx)}>
               <ListItemAvatar>
                 <Avatar alt={`${idx+1}one finger`} src={images[idx]} />
               </ListItemAvatar>

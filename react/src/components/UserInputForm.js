@@ -12,7 +12,7 @@ width: '25ch',
 },
 }));
 
-export default function Ending({score}) {
+export default function Ending({score, onChangeGame}) {
 const classes = useStyles();
 const [userInfo, setUserInfo] = useState({
   name : "",
@@ -30,6 +30,7 @@ function handleOnSubmit(e) {
   insertUser(userInfo.name, userInfo.email, score).then((response) => {
     console.log(response)
   })
+  onChangeGame(false);
 }
 
 return (
