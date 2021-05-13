@@ -82,7 +82,7 @@ def getQuizList():
                 choices = []
             # 문제 갱신
             _id = obj['ID']
-            pb = obj['PB']p
+            pb = obj['PB']
         # 문제가 바뀌든지 말던지 choice는 계속 append
         choices.append(obj['CHOICE'])
         # ansewr 기록

@@ -30,14 +30,33 @@
 </br></br>
 # 📋Datebase Schema
 
-![image](./image/schema.PNG) 
+<div align="center">
+  <figure>
+      <img src="./image/schema.PNG" alt="DB 스키마">
+      <div align="center"><figcation>MySQL DB schema</figcation></div>
+  </figure>
+</div>
+
  
 </br></br>
-# 📈구성도  
+# 📈구성도
 - **Usecase Diagram**
-![image](./image/diagram.PNG)
+
+<div align="center">
+  <figure>
+      <img src="./image/diagram.PNG" alt="usecase diagram">
+      <div align="center"><figcation>UseCase Diagram</figcation></div>
+  </figure>
+</div>
+
 - **Component Diagram**
-![image](./image/componentDiagram.PNG)
+
+<div align="center">
+  <figure>
+      <img src="./image/componentDiagram.PNG" alt="package diagram">
+      <div align="center"><figcation>Package Diagram</figcation></div>
+  </figure>
+</div>
  
 </br></br>
 # 📐동작 구현
@@ -48,13 +67,51 @@
 5. getScoreList url을 통해 랭킹을 가져옴
 </br></br>
 # 👀실행 화면 
--  웹페이지 메인 화면
-![image](./image/diagram.PNG)
--  화면
--  화면
--  화면
+
+<div align="center">
+  <figure>
+      <img src="./image/main.JPG" alt="메인 화면">
+      <div align="center"><figcation>메인 화면</figcation></div>
+  </figure>
+</div>
+
+<div align="center">
+  <figure>
+      <img src="./image/example.JPG" alt="게임 화면">
+      <div align="center"><figcation>게임 화면</figcation></div>
+  </figure>
+</div>
+
+<div align="center">
+  <figure>
+      <img src="./image/correct.JPG" alt="정답 화면">
+      <div align="center"><figcation>정답 화면</figcation></div>
+  </figure>
+</div>
+
+<div align="center">
+  <figure>
+      <img src="./image/wrong.JPG" alt="오답 화면">
+      <div align="center"><figcation>오답 화면</figcation></div>
+  </figure>
+</div>
+
+<div align="center">
+  <figure>
+      <img src="./image/nick.JPG" alt="사용자 정보 화면">
+      <div align="center"><figcation>사용자 정보 화면</figcation></div>
+  </figure>
+</div>
+
+<div align="center">
+  <figure>
+      <img src="./image/rank.JPG" alt="랭크 화면">
+      <div align="center"><figcation>랭크 화면</figcation></div>
+  </figure>
+</div>
 
 </br></br>
+
 # 🎈결론
 맞춤법 게임을 통해 즐겁게 맞춤법 실력을 향상시킬 수 있게 되고 사회적으로 문제였던 맞춤법 문제를 해결할 수 있다. 
 
