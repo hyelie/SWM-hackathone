@@ -31,31 +31,6 @@ def index():
 def hello():
     return render_template('./hello.html')
 
-
-# 예시
-@app.route("/select")
-@as_json
-def select():
-    sql = "SELECT * FROM test"
-    res = db.executeAll(sql) # list
-    return res
-
-# 예시
-@app.route('/method', methods=['GET', 'POST'])
-@as_json
-def insert():
-    if request.method == 'GET':
-        #name = request.args.get("name") # ?name=<name>
-        sql = """SELECT * FROM test WHERE ID=2"""
-        res = db.executeAll(sql)
-        return res # type(res) : list
-    else:
-        problemId = request.form['문제키값']
-        problemDesc = request.form['문제']
-        sql = """INSERT INTO test VALUES({},'{}')""".format(problemId, problemDesc)
-        sqlRes = db.executeAll(sql)
-        db.commit()
-        return {'status_code': 200, 'result': True}
     
 # /getScoreList
 @app.route('/getScoreList', methods = ['GET'])
@@ -73,17 +48,10 @@ def getQuizList():
     num = request.args.get('num')
     ids = random.sample(pblst, int(num))
     
-    
-    print("print(ids):")
-    print(ids)
     ids = map(str, ids)
     strids = ",".join(ids)
     strids = "(" + strids + ")"
-    print("print(strids):")
-    print(strids)
-    
     ### for문으로 query 날리는 방식 ###
-    
     # for _id in ids:
     #     sql = """SELECT * FROM PROBLEMS WHERE ID={}""".format(_id)
     #     sqlRes = db.executeAll(sql)
@@ -97,7 +65,6 @@ def getQuizList():
     #         if obj['ANS'] == True:
     #             ansIdx = idx
     #     res.append({"PB": pb, "CHOICES": choices, "ANS": ansIdx})
-    
     
     ### 쿼리문 사용하는 방법 ###
     sql = """SELECT * FROM PROBLEMS WHERE PROBLEMS.ID IN {}""".format(strids)
@@ -141,7 +108,6 @@ def insertUser():
         reqname = request.form['name']
         reqemail = request.form['email']
         reqscore = request.form['score']
-        
         query = """INSERT INTO USERS(EMAIL, NICK, SCORE) VALUES(%s, %s, %s) 
                     ON DUPLICATE KEY UPDATE 
                         NICK = IF(USERS.SCORE <= VALUES(SCORE), VALUES(NICK), USERS.NICK), 
@@ -149,12 +115,16 @@ def insertUser():
                 """
         params = (reqemail, reqname, reqscore)
         sqlRes = db.executeAll(query, params)
-        db.commit()
     except Exception as E:
-        return {'status_code' : 409, 'result' : True}
-    finally:
+        return {'status_code' : 400, 'result' : False}
+    else:
+        db.commit()
         return {'status_code' : 200, 'result' : True}
+
 
 if __name__ == "__main__":
     print(sys.argv[0])
     app.run(host='0.0.0.0', port=int(sys.argv[1]))
+    
+
+
