@@ -5,7 +5,7 @@ const BASE_URL = "https://flask-awesome-game-rhmph.run.goorm.io"
 
 export async function insertUser(name, email, score) {
 	try {
-		await axios({
+		const result = await axios({
 			method:'post',
 			url: `${BASE_URL}/insertUser`,
 			data: {
@@ -13,7 +13,7 @@ export async function insertUser(name, email, score) {
 			email: email,
 			score: score
 		}});
-		
+		return result
 	} catch(err) {
 		console.err(err);
 	}

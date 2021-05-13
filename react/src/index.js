@@ -10,16 +10,24 @@ import logger from 'redux-logger';
 
 import reducer from './reducers/index';
 import "./styles/main.scss";
-
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(applyMiddleware(logger, thunk)));
-
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: 'BMJUA',
+  },
+});
 ReactDOM.render(
+  <MuiThemeProvider theme={theme}>
   <Provider store={store}> 
     <React.StrictMode>
+      <CssBaseline />
       <App />
     </React.StrictMode>
-  </Provider>,
+  </Provider>
+  </MuiThemeProvider>,
   document.getElementById('root')
 );
 
