@@ -1,3 +1,4 @@
 *.manifest
 nodemodules
 flask-mysql/config/*
+react/node_modules/*

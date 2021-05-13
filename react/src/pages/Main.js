@@ -1,19 +1,18 @@
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
+import Container from '@material-ui/core/Container';
+import backgroundBuildingImg from "../images/building.png"
+import backgroundkingImg from "../images/king.png"
 function Main() {
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div id="backgroundContainer">
+        <div id="center">
+        <img id="backgroundKing" src={backgroundkingImg}></img>
+        <img id="backgroundBuilding" src={backgroundBuildingImg}></img>
+      </div>
+      </div>
     </div>
   );
 }
