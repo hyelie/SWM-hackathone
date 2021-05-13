@@ -28,9 +28,13 @@
 </br>
 이러한 문제점을 해결하기 위해 맞춤법 문제 공공데이터를 활용하여 맞춤법 게임을 통해 맞춤법 실력을 증진시키고자 이 프로젝트를 진행하였습니다.
 
+# Datebase Schema
+![image](./image/schema.PNG) 
+ 
 </br></br>
 # 📈구성도  
-
+- **Usecase Diagram**
+![image](./image/diagram.PNG) 
 </br></br>
 # 📐동작 구현
 
@@ -39,3 +43,7 @@
 
 </br></br>
 # 🎈결론  
+
+</br></br>
+</br></br>
+![image](./image/somalogo.JPG)
