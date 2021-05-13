@@ -11,26 +11,17 @@ for i, r in data.iterrows():
     problemDesc = r['문제']
     choice = r['보기정보']
     answer = r['정답여부']
+    if type(answer) == type("str"):
+        answer = "true"
+    else:
+        answer = "false"
     
     try:
-        sql = """INSERT INTO PROBLEMSET VALUES({}, "{}")""".format(problemId, problemDesc)
+        sql = """INSERT INTO PROBLEMS VALUES({}, "{}", "{}", {})""".format(problemId, problemDesc, choice, answer)
         db.executeAll(sql)
         db.commit()
         
     except Exception as e:
         print(e)
         
-    try:
-        if type(answer) == type("str"):
-            answer = "true"
-        else:
-            answer = "false"
-            
-        sql = """INSERT INTO CHOICES VALUES({}, "{}", {})""".format(problemId, choice, answer)
-        db.executeAll(sql)
-        db.commit()
         
-    except Exception as e:
-        print(e)
-    
-    

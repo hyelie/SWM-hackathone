@@ -1,0 +1,91 @@
+app.py
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+172.17.0.1 - - [13/May/2021 08:33:18] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [13/May/2021 08:38:26] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [13/May/2021 08:39:25] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [13/May/2021 08:39:35] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [13/May/2021 09:03:22] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [13/May/2021 09:04:07] "[31m[1mGET /insertUser HTTP/1.1[0m" 405 -
+172.17.0.1 - - [13/May/2021 09:48:03] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [13/May/2021 09:49:19] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [13/May/2021 09:49:30] "[37mGET /getScoreList HTTP/1.1[0m" 200 -
+172.17.0.1 - - [13/May/2021 09:49:30] "[37mGET / HTTP/1.1[0m" 200 -
+172.17.0.1 - - [13/May/2021 09:49:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+172.17.0.1 - - [13/May/2021 09:49:59] "[37mGET /getScoreList HTTP/1.1[0m" 200 -
+172.17.0.1 - - [13/May/2021 09:50:50] "[37mPOST /insertUser HTTP/1.1[0m" 200 -
+172.17.0.1 - - [13/May/2021 09:51:00] "[37mGET /getScoreList HTTP/1.1[0m" 200 -
+172.17.0.1 - - [13/May/2021 09:53:16] "[37mPOST /insertUser HTTP/1.1[0m" 200 -
+[2021-05-13 09:53:45,628] ERROR in app: Exception on /hello [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 31, in hello
+    return render_template('./hello.html')
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: ./hello.html
+172.17.0.1 - - [13/May/2021 09:53:45] "[35m[1mGET /hello HTTP/1.1[0m" 500 -
+172.17.0.1 - - [13/May/2021 09:54:25] "[37mGET / HTTP/1.1[0m" 200 -
+[2021-05-13 09:54:28,898] ERROR in app: Exception on /hello [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.7/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 31, in hello
+    return render_template('./hello.html')
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python3.7/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python3.7/site-packages/jinja2/loaders.py", line 115, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/usr/local/lib/python3.7/site-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: ./hello.html
+172.17.0.1 - - [13/May/2021 09:54:28] "[35m[1mGET /hello HTTP/1.1[0m" 500 -
