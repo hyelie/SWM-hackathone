@@ -1,0 +1,3 @@
+*.manifest
+nodemodules
+flask-mysql/config/*
