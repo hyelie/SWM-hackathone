@@ -75,12 +75,16 @@
   </figure>
 </div>
 
+<br>
+
 <div align="center">
   <figure>
       <img src="./image/example.JPG" alt="게임 화면">
       <div align="center"><figcation>게임 화면</figcation></div>
   </figure>
 </div>
+
+<br>
 
 <div align="center">
   <figure>
@@ -89,6 +93,8 @@
   </figure>
 </div>
 
+<br>
+
 <div align="center">
   <figure>
       <img src="./image/wrong.JPG" alt="오답 화면">
@@ -96,12 +102,16 @@
   </figure>
 </div>
 
+<br>
+
 <div align="center">
   <figure>
       <img src="./image/nick.JPG" alt="사용자 정보 화면">
       <div align="center"><figcation>사용자 정보 화면</figcation></div>
   </figure>
 </div>
+
+<br>
 
 <div align="center">
   <figure>
