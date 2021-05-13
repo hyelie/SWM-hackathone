@@ -1,3 +1,6 @@
-*.manifest
+g*.manifest
 nodemodules
 flask-mysql/config/*
+flask-mysql/data.csv
+flask-mysql/deal-with-data.py
+react/*
