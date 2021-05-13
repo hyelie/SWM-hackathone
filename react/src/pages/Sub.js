@@ -11,7 +11,7 @@ function Sub() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn asd
         </a>
       </header>
     </div>

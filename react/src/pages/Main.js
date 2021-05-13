@@ -1,6 +1,7 @@
+import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-
 function Main() {
+
   return (
     <div className="App">
       <header className="App-header">
