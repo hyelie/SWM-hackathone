@@ -1,4 +1,4 @@
-g*.manifest
+*.manifest
 nodemodules
 flask-mysql/config/*
 flask-mysql/data.csv

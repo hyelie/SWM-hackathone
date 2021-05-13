@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)
 # MySQL에 연결
 db = mysql.Database()
-pblst = [i for i in range(1, 825)]
+pblst = [i for i in range(1, 824)]
 
 
 def as_json(f):
@@ -20,7 +20,6 @@ def as_json(f):
         res = json.dumps(res, ensure_ascii=False).encode('utf8')
         return Response(res, content_type='application/json; charset=utf-8')
     return decorated_function
-
 
 @app.route("/")
 def index():
@@ -83,7 +82,7 @@ def getQuizList():
                 choices = []
             # 문제 갱신
             _id = obj['ID']
-            pb = obj['PB']
+            pb = obj['PB']p
         # 문제가 바뀌든지 말던지 choice는 계속 append
         choices.append(obj['CHOICE'])
         # ansewr 기록
@@ -92,6 +91,8 @@ def getQuizList():
     
     if len(choices) != 0:
         res.append({"PB": pb, "CHOICES": choices, "ANS": ansIdx})
+        
+        
     
     return res
 
